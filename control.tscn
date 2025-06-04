@@ -17,23 +17,40 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 script = ExtResource("1_62e2m")
-limit = Vector2(200, 99999)
+limit = Vector2(250, 99999)
 halign = 0
 metadata/_custom_type_script = "uid://cyex67raui8rg"
 
 [node name="PanelContainer" type="PanelContainer" parent="MaxSizeContainer"]
-custom_minimum_size = Vector2(150, 0)
+custom_minimum_size = Vector2(175, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 
 [node name="NodeDrawer" type="VBoxContainer" parent="MaxSizeContainer/PanelContainer"]
 layout_mode = 2
-size_flags_vertical = 0
 
 [node name="Label" type="Label" parent="MaxSizeContainer/PanelContainer/NodeDrawer"]
 layout_mode = 2
 text = "Node Drawer"
 horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MaxSizeContainer/PanelContainer/NodeDrawer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Tree" type="Tree" parent="MaxSizeContainer/PanelContainer/NodeDrawer/ScrollContainer"]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="MaxSizeContainer/PanelContainer/NodeDrawer"]
+custom_minimum_size = Vector2(0, 39.845)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.7
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MaxSizeContainer/PanelContainer/NodeDrawer/PanelContainer"]
+layout_mode = 2
+text = "Description goes here"
 
 [node name="GraphEdit" type="GraphEdit" parent="."]
 layout_mode = 2
