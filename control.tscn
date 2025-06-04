@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://dejdfqf0vs3v7"]
+
+[ext_resource type="Script" uid="uid://di17cagnx0cpe" path="res://graph_edit.gd" id="1_0fbet"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_offset = Vector2(-40, -40)
+right_disconnects = true
+script = ExtResource("1_0fbet")
+
+[node name="GraphNode" type="GraphNode" parent="GraphEdit"]
+layout_mode = 0
+offset_left = 149.0
+offset_top = 296.0
+offset_right = 355.0
+offset_bottom = 376.0
+mouse_filter = 1
+position_offset = Vector2(109, 256)
+title = "Graph Edit Example Node"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+
+[node name="Label" type="Label" parent="GraphEdit/GraphNode"]
+layout_mode = 2
+text = "Blah"
+
+[node name="GraphNode2" type="GraphNode" parent="GraphEdit"]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 290.0
+offset_right = 765.0
+offset_bottom = 370.0
+mouse_filter = 1
+position_offset = Vector2(519, 250)
+title = "Graph Edit Example Node"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = true
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+
+[node name="Label" type="Label" parent="GraphEdit/GraphNode2"]
+layout_mode = 2
+text = "Blah"
+
+[connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="connection_request"]
+[connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="disconnection_request"]
