@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dejdfqf0vs3v7"]
+[gd_scene load_steps=4 format=3 uid="uid://dejdfqf0vs3v7"]
 
-[ext_resource type="Script" uid="uid://di17cagnx0cpe" path="res://graph_edit.gd" id="1_0fbet"]
-[ext_resource type="Script" uid="uid://cyex67raui8rg" path="res://addons/MaxSizeContainer/max_size_container.gd" id="1_62e2m"]
+[ext_resource type="Script" uid="uid://cyex67raui8rg" path="res://addons/MaxSizeContainer/max_size_container.gd" id="1_spqw0"]
+[ext_resource type="Script" uid="uid://di17cagnx0cpe" path="res://scenes/editor/editor_graphedit.gd" id="2_gf71r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_62e2m"]
 
 [node name="Control" type="HBoxContainer"]
 anchors_preset = 15
@@ -16,7 +18,7 @@ theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
-script = ExtResource("1_62e2m")
+script = ExtResource("1_spqw0")
 limit = Vector2(250, 99999)
 halign = 0
 metadata/_custom_type_script = "uid://cyex67raui8rg"
@@ -32,6 +34,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MaxSizeContainer/PanelContainer/NodeDrawer"]
 layout_mode = 2
 text = "Node Drawer"
+label_settings = SubResource("LabelSettings_62e2m")
 horizontal_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MaxSizeContainer/PanelContainer/NodeDrawer"]
@@ -50,22 +53,23 @@ size_flags_stretch_ratio = 0.7
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MaxSizeContainer/PanelContainer/NodeDrawer/PanelContainer"]
 layout_mode = 2
-text = "Description goes here"
+text = "Description goes here
+"
 
 [node name="GraphEdit" type="GraphEdit" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 right_disconnects = true
-script = ExtResource("1_0fbet")
+script = ExtResource("2_gf71r")
 
 [node name="GraphNode" type="GraphNode" parent="GraphEdit"]
 layout_mode = 0
-offset_left = 109.0
-offset_top = 256.0
-offset_right = 315.0
-offset_bottom = 336.0
+offset_left = 140.0
+offset_top = 200.0
+offset_right = 346.0
+offset_bottom = 280.0
 mouse_filter = 1
-position_offset = Vector2(109, 256)
+position_offset = Vector2(140, 200)
 title = "Graph Edit Example Node"
 slot/0/left_enabled = true
 slot/0/left_type = 0
@@ -83,12 +87,12 @@ text = "Blah"
 
 [node name="GraphNode2" type="GraphNode" parent="GraphEdit"]
 layout_mode = 0
-offset_left = 519.0
-offset_top = 250.0
-offset_right = 725.0
-offset_bottom = 330.0
+offset_left = 400.0
+offset_top = 200.0
+offset_right = 606.0
+offset_bottom = 280.0
 mouse_filter = 1
-position_offset = Vector2(519, 250)
+position_offset = Vector2(400, 200)
 title = "Graph Edit Example Node"
 slot/0/left_enabled = true
 slot/0/left_type = 0

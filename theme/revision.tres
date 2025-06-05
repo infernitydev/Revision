@@ -1,0 +1,55 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bhxxcg2ncfn8g"]
+
+[ext_resource type="FontVariation" uid="uid://bdn0ro7oqscvf" path="res://theme/fontvariations/regular600.tres" id="1_4mgcw"]
+[ext_resource type="FontVariation" uid="uid://c6p4u47ni0xvk" path="res://theme/fontvariations/regular400.tres" id="1_vrymu"]
+[ext_resource type="FontVariation" uid="uid://pfl8vaosges4" path="res://theme/fontvariations/italic600.tres" id="2_8wkd6"]
+[ext_resource type="FontVariation" uid="uid://boqj8yso422i" path="res://theme/fontvariations/italic400.tres" id="3_nwc7e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwc7e"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.0941176, 0.0941176, 0.0941176, 0.501961)
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r8w6k"]
+bg_color = Color(0.0566576, 0.173837, 0.224796, 0.752941)
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4mgcw"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.501961)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wkd6"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+content_margin_bottom = 2.0
+bg_color = Color(0.149118, 0.285453, 0.408382, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+
+[resource]
+default_font = ExtResource("1_vrymu")
+GraphNode/styles/panel = SubResource("StyleBoxFlat_nwc7e")
+GraphNode/styles/panel_selected = SubResource("StyleBoxFlat_r8w6k")
+GraphNode/styles/titlebar = SubResource("StyleBoxFlat_4mgcw")
+GraphNode/styles/titlebar_selected = SubResource("StyleBoxFlat_8wkd6")
+GraphNodeTitleLabel/fonts/font = ExtResource("1_4mgcw")
+Label/font_sizes/font_size = 14
+RichTextLabel/font_sizes/bold_font_size = 14
+RichTextLabel/font_sizes/bold_italics_font_size = 14
+RichTextLabel/font_sizes/italics_font_size = 14
+RichTextLabel/font_sizes/mono_font_size = 14
+RichTextLabel/font_sizes/normal_font_size = 14
+RichTextLabel/fonts/bold_font = ExtResource("1_4mgcw")
+RichTextLabel/fonts/bold_italics_font = ExtResource("2_8wkd6")
+RichTextLabel/fonts/italics_font = ExtResource("3_nwc7e")
