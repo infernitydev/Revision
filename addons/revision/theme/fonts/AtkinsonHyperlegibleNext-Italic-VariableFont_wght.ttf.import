@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cj2nmfye87tej"
-path="res://.godot/imported/AtkinsonHyperlegibleNext-Italic-VariableFont_wght.ttf-9f3987a045e8505b4d54c6ca7179a836.fontdata"
+path="res://.godot/imported/AtkinsonHyperlegibleNext-Italic-VariableFont_wght.ttf-febff739a3de402c320b0ddbd0981f28.fontdata"
 
 [deps]
 
-source_file="res://theme/fonts/AtkinsonHyperlegibleNext-Italic-VariableFont_wght.ttf"
-dest_files=["res://.godot/imported/AtkinsonHyperlegibleNext-Italic-VariableFont_wght.ttf-9f3987a045e8505b4d54c6ca7179a836.fontdata"]
+source_file="res://addons/revision/theme/fonts/AtkinsonHyperlegibleNext-Italic-VariableFont_wght.ttf"
+dest_files=["res://.godot/imported/AtkinsonHyperlegibleNext-Italic-VariableFont_wght.ttf-febff739a3de402c320b0ddbd0981f28.fontdata"]
 
 [params]
 

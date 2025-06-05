@@ -1,9 +1,9 @@
 [gd_resource type="Theme" load_steps=9 format=3 uid="uid://bhxxcg2ncfn8g"]
 
-[ext_resource type="FontVariation" uid="uid://bdn0ro7oqscvf" path="res://theme/fontvariations/regular600.tres" id="1_4mgcw"]
-[ext_resource type="FontVariation" uid="uid://c6p4u47ni0xvk" path="res://theme/fontvariations/regular400.tres" id="1_vrymu"]
-[ext_resource type="FontVariation" uid="uid://pfl8vaosges4" path="res://theme/fontvariations/italic600.tres" id="2_8wkd6"]
-[ext_resource type="FontVariation" uid="uid://boqj8yso422i" path="res://theme/fontvariations/italic400.tres" id="3_nwc7e"]
+[ext_resource type="FontVariation" uid="uid://bdn0ro7oqscvf" path="res://addons/revision/theme/fontvariations/regular600.tres" id="1_4mgcw"]
+[ext_resource type="FontVariation" uid="uid://c6p4u47ni0xvk" path="res://addons/revision/theme/fontvariations/regular400.tres" id="1_vrymu"]
+[ext_resource type="FontVariation" uid="uid://pfl8vaosges4" path="res://addons/revision/theme/fontvariations/italic600.tres" id="2_8wkd6"]
+[ext_resource type="FontVariation" uid="uid://boqj8yso422i" path="res://addons/revision/theme/fontvariations/italic400.tres" id="3_nwc7e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwc7e"]
 content_margin_left = 8.0

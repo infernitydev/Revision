@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://db2go1q8koydi"
-path="res://.godot/imported/AtkinsonHyperlegibleNext-VariableFont_wght.ttf-cd5e2d59d0f12df5f08158708c124b9e.fontdata"
+path="res://.godot/imported/AtkinsonHyperlegibleNext-VariableFont_wght.ttf-14439918c64f6f33d8d5e8a2e1867bd0.fontdata"
 
 [deps]
 
-source_file="res://theme/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
-dest_files=["res://.godot/imported/AtkinsonHyperlegibleNext-VariableFont_wght.ttf-cd5e2d59d0f12df5f08158708c124b9e.fontdata"]
+source_file="res://addons/revision/theme/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf"
+dest_files=["res://.godot/imported/AtkinsonHyperlegibleNext-VariableFont_wght.ttf-14439918c64f6f33d8d5e8a2e1867bd0.fontdata"]
 
 [params]
 

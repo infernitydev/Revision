@@ -1,6 +1,6 @@
 [gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://c6p4u47ni0xvk"]
 
-[ext_resource type="FontFile" uid="uid://db2go1q8koydi" path="res://theme/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf" id="1_q8so2"]
+[ext_resource type="FontFile" uid="uid://db2go1q8koydi" path="res://addons/revision/theme/fonts/AtkinsonHyperlegibleNext-VariableFont_wght.ttf" id="1_q8so2"]
 
 [resource]
 base_font = ExtResource("1_q8so2")
