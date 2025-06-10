@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dejdfqf0vs3v7"]
+[gd_scene load_steps=5 format=3 uid="uid://xslfg3fdjbhm"]
 
 [ext_resource type="Script" uid="uid://bsqnqh3tnlaih" path="res://addons/revision/scenes/editor/tree.gd" id="1_spqw0"]
 [ext_resource type="Script" uid="uid://di17cagnx0cpe" path="res://addons/revision/scenes/editor/graphedit.gd" id="2_gf71r"]
