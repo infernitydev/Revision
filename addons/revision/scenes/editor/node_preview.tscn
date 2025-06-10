@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://yg2mieqrcige"]
+
+[node name="NodePreview" type="PanelContainer"]
+offset_right = 1.0
+offset_bottom = 23.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2

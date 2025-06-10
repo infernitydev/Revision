@@ -36,3 +36,17 @@ func disconnection_request(from_node: StringName, from_port: int, to_node: Strin
 	print(to_node)
 	print(to_port)
 	disconnect_node(from_node, from_port, to_node, to_port)
+
+func create_node(position: Vector2, type: String):
+	var node = GraphNode.new()
+	node.title = type
+	node.position_offset = position + scroll_offset
+	add_child(node)
+	node.owner = self
+
+func _can_drop_data(at_position: Vector2, data: Variant):
+	return data is TreeItem
+
+func _drop_data(at_position: Vector2, data: Variant):
+	data = data as TreeItem
+	create_node(at_position, data.get_text(0))
