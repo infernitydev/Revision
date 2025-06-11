@@ -1,4 +1,5 @@
 extends Object
+class_name RevisionParser
 
 func parse(graph: GraphEdit):
 	pass
