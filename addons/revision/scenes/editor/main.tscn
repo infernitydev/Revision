@@ -70,52 +70,6 @@ connection_lines_curvature = 0.25
 minimap_size = Vector2(160, 120)
 script = ExtResource("2_gf71r")
 
-[node name="GraphNode" type="GraphNode" parent="GraphEdit"]
-layout_mode = 0
-offset_left = 140.0
-offset_top = 200.0
-offset_right = 346.0
-offset_bottom = 280.0
-mouse_filter = 1
-position_offset = Vector2(140, 200)
-title = "Graph Edit Example Node"
-slot/0/left_enabled = true
-slot/0/left_type = 0
-slot/0/left_color = Color(1, 1, 1, 1)
-slot/0/left_icon = null
-slot/0/right_enabled = true
-slot/0/right_type = 0
-slot/0/right_color = Color(1, 1, 1, 1)
-slot/0/right_icon = null
-slot/0/draw_stylebox = true
-
-[node name="Label" type="Label" parent="GraphEdit/GraphNode"]
-layout_mode = 2
-text = "Blah"
-
-[node name="GraphNode2" type="GraphNode" parent="GraphEdit"]
-layout_mode = 0
-offset_left = 400.0
-offset_top = 200.0
-offset_right = 606.0
-offset_bottom = 280.0
-mouse_filter = 1
-position_offset = Vector2(400, 200)
-title = "Graph Edit Example Node"
-slot/0/left_enabled = true
-slot/0/left_type = 0
-slot/0/left_color = Color(1, 1, 1, 1)
-slot/0/left_icon = null
-slot/0/right_enabled = true
-slot/0/right_type = 0
-slot/0/right_color = Color(1, 1, 1, 1)
-slot/0/right_icon = null
-slot/0/draw_stylebox = true
-
-[node name="Label" type="Label" parent="GraphEdit/GraphNode2"]
-layout_mode = 2
-text = "Blah"
-
 [connection signal="item_selected" from="PanelContainer/NodeDrawer/ScrollContainer/Tree" to="PanelContainer/NodeDrawer/PanelContainer/DescriptionLabel" method="_on_tree_item_selected"]
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="connection_request"]
 [connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="disconnection_request"]

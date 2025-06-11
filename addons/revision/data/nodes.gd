@@ -47,10 +47,58 @@ class SceneSlot:
 		
 class EditSlot:
 	extends Slot
+	var ems: int
+	func _init(_ems: int = 4):
+		ems = _ems
+
 	func unpack():
 		var edit = LineEdit.new()
+		edit.add_theme_constant_override("minimum_character_width", ems)
 		return edit
 
+class HBoxSlot:
+	extends Slot
+	var slots: Array
+	func _init(_slots):
+		slots = _slots
+
+	func unpack():
+		var hbox = HBoxContainer.new()
+		for i in slots:
+			hbox.add_child(i.unpack())
+		return hbox
+		
+class AnnotatedEditSlot:
+	extends HBoxSlot
+	func _init(text):
+		slots = [EditSlot.new(30), LabelSlot.new(text)]
+		
+class SpreadSlot:
+	extends HBoxSlot
+
+	class MiddleSlot:
+		extends Slot
+		func unpack():
+			var middle = Control.new()
+			middle.size_flags_horizontal |= Control.SIZE_EXPAND
+			return middle
+	
+	func _init(left,right):
+		slots = [left,MiddleSlot.new(),right]
+	
+class MarginSlot:
+	extends Slot
+	
+	var width: float
+	
+	func _init(_width: float):
+		width = _width
+	
+	func unpack():
+		var margin = Control.new()
+		margin.custom_minimum_size.x = width
+		return margin
+		
 var nodes = {
 	"Number": RevisionScriptNode.new(
 		"  Number  ", 
@@ -71,7 +119,8 @@ var nodes = {
 		"[b]Add[/b]\n[indent]Add two values.",
 		[Port.new(builtin_types.NUMBER), Port.new(builtin_types.NUMBER)],
 		[Port.new(builtin_types.NUMBER)],
-		[])
+		[SpreadSlot.new(EditSlot.new(2),MarginSlot.new(30)),
+		 SpreadSlot.new(EditSlot.new(2),MarginSlot.new(30))])
 }
 
 var tree = {
