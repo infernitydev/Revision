@@ -1,4 +1,6 @@
-class_name MPMapScriptGraph extends GraphEdit
+class_name RevisionScriptGraph extends GraphEdit
+
+var NodeData = RevisionScriptNodeData.new()
 
 func _ready() -> void:
 	var hbox = get_menu_hbox()
@@ -25,8 +27,7 @@ func connection_request(from_node: StringName, from_port: int, to_node: StringNa
 	for con in get_connection_list():
 		if con.to_node == to_node and con.to_port == to_port:
 			print("disconnecting")
-			disconnect_node(from_node, from_port, to_node, to_port)
-			return
+			disconnect_node(con.from_node, con.from_port, to_node, to_port)
 	connect_node(from_node, from_port, to_node, to_port)
 
 func disconnection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
@@ -39,8 +40,34 @@ func disconnection_request(from_node: StringName, from_port: int, to_node: Strin
 
 func create_node(position: Vector2, type: String):
 	var node = GraphNode.new()
-	node.title = type
-	node.position_offset = position + scroll_offset
+	var node_data = NodeData.nodes[type]
+	node.title = node_data.title
+	var more_outputs = len(node_data.outputs) > len(node_data.inputs)
+	var greater = len(node_data.outputs) if more_outputs else len(node_data.inputs)
+	for idx in greater:
+		var slot
+		if idx < len(node_data.slots):
+			slot = node_data.slots[idx].unpack()
+		else:
+			slot = Control.new()
+			slot.custom_minimum_size.y = 10
+		node.add_child(slot)
+		if idx >= len(node_data.inputs):
+			var output = node_data.outputs[idx]
+			node.set_slot(idx,false,0,Color.WHITE,true,output.type,output.color)
+		elif idx >= len(node_data.outputs):
+			var input = node_data.inputs[idx]
+			node.set_slot(idx,true,input.type,input.color,false,0,Color.WHITE)
+		else:
+			var input = node_data.inputs[idx]
+			var output = node_data.outputs[idx]
+			node.set_slot(idx,true,input.type,input.color,true,output.type,output.color)
+	for idx in max(0, len(node_data.slots)-greater):
+		var slot = node_data.slots[idx].instantiate()
+		node.add_child(slot)
+	var snapped_position = (position.snapped(Vector2(snapping_distance,snapping_distance))
+							if snapping_enabled else position)
+	node.position_offset = (snapped_position + scroll_offset) / zoom
 	add_child(node)
 	node.owner = self
 

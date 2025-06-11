@@ -1,18 +1,23 @@
 extends Tree
 
+var NodeData = RevisionScriptNodeData.new()
+
 var selected_item = null
 
 func _ready():
 	var tree = self
 	var root = tree.create_item()
 	tree.hide_root = true
-	var inputs = tree.create_item(root)
-	inputs.set_text(0, "Inputs")
-	var outputs = tree.create_item(root)
-	outputs.set_text(0, "Outputs")
-	var subchild1 = tree.create_item(inputs)
-	subchild1.set_text(0, "Subchild1")
-	item_mouse_selected.connect(drag_item)
+	for item in NodeData.tree:
+		add_item(root,item,NodeData.tree[item])
+	item_mouse_selected.connect(select_item)
+	
+func add_item(parent,item,item_data):
+	var tree_item = create_item(parent)
+	tree_item.set_text(0, item)
+	if item_data is Dictionary:
+		for i in item_data:
+			add_item(tree_item, i, item_data[i])
 
 func _process(_delta: float):
 	set_process_input(true)
@@ -26,9 +31,11 @@ func _input(event: InputEvent):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed == false:
 			selected_item = null
 
-func drag_item(pos,button):
+func select_item(pos,button):
 	if button == MOUSE_BUTTON_LEFT:
-		selected_item = get_selected()
-		var preview = Label.new()
-		preview.text = selected_item.get_text(0)
-		force_drag(selected_item, preview)
+		var item = get_selected()
+		if item.get_text(0) in NodeData.nodes:
+			selected_item = item
+			var preview = Label.new()
+			preview.text = selected_item.get_text(0)
+			force_drag(selected_item, preview)

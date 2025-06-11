@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://xslfg3fdjbhm"]
+[gd_scene load_steps=6 format=3 uid="uid://xslfg3fdjbhm"]
 
 [ext_resource type="Script" uid="uid://bsqnqh3tnlaih" path="res://addons/revision/scenes/editor/tree.gd" id="1_spqw0"]
 [ext_resource type="Script" uid="uid://di17cagnx0cpe" path="res://addons/revision/scenes/editor/graphedit.gd" id="2_gf71r"]
+[ext_resource type="Script" uid="uid://cj3cvxntngo3c" path="res://addons/revision/scenes/editor/description_label.gd" id="2_i1q0w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_62e2m"]
 
@@ -54,10 +55,10 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.7
 theme_override_styles/panel = SubResource("StyleBoxFlat_spqw0")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/NodeDrawer/PanelContainer"]
+[node name="DescriptionLabel" type="RichTextLabel" parent="PanelContainer/NodeDrawer/PanelContainer"]
 layout_mode = 2
-text = "Description goes here
-"
+bbcode_enabled = true
+script = ExtResource("2_i1q0w")
 
 [node name="GraphEdit" type="GraphEdit" parent="."]
 layout_mode = 2
@@ -115,5 +116,6 @@ slot/0/draw_stylebox = true
 layout_mode = 2
 text = "Blah"
 
+[connection signal="item_selected" from="PanelContainer/NodeDrawer/ScrollContainer/Tree" to="PanelContainer/NodeDrawer/PanelContainer/DescriptionLabel" method="_on_tree_item_selected"]
 [connection signal="connection_request" from="GraphEdit" to="GraphEdit" method="connection_request"]
 [connection signal="disconnection_request" from="GraphEdit" to="GraphEdit" method="disconnection_request"]
