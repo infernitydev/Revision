@@ -6,5 +6,5 @@ var running = false
 func run(initial_node):
 	pass
 	
-func run_node():
+func run_node(node):
 	pass
